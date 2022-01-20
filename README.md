@@ -12,7 +12,9 @@ Requirements:
 - Domain name
 - [Api Gateway Authorizer](api_gw_authorizers.png) pointing to Cognito User Pool
 
-
+![Cognito App client](App_client.png)
+![Cognito App client settings](App_client_settings.png)
+![Api Gateway Authorizer](api_gw_authorizers.png)
 
 [login_with_secrethash.py](login_with_secrethash.py) contains the solution for authenticating against Cognito User Pool with user, password and app client secret.
 
