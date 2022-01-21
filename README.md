@@ -36,3 +36,7 @@ Requirements:
 ![Cognito App client](App_client.png)
 ![Cognito App client settings](App_client_settings.png)
 ![Api Gateway Authorizer](api_gw_authorizers.png)
+
+
+[cognito.txt](cognito.txt) sequence diagram was generated from https://sequencediagram.org/
+![diagram.png](diagram.png)

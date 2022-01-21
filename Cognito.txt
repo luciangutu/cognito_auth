@@ -1,0 +1,12 @@
+title Auth Sequence diagram for an existing Cognito user
+
+Api Gateway /login<--Client: (1) Client sends username and password
+Api Gateway /login-->Cognito: (2) Request the IdToken
+Cognito-->Api Gateway /login: (3) Response with the IdToken
+note over Client,Cognito:Retrieving the **JWT token** from Cognito by providing user and password
+
+Client-->Api Gateway /auth: (4) Client sends a request to an endpoint using the **JWT token** in the headers
+Api Gateway /auth-->Lambda: (5) Api Gateway invokes the Lambda
+Api Gateway /auth<--Lambda: (6) Lambda returns the response with the email decoded from the **JWT token**
+Client<--Api Gateway /auth: (7) Api Gateway returns the response from the Lambda with the email decoded from the **JWT token**
+note over Lambda,Client:Retrieving email from the **JWT token**
