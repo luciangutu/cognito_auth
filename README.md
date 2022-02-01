@@ -9,12 +9,12 @@ python ./create_user.py
 {'ResponseMetadata': {'RequestId': '998cfb37-087d-4c84-bd8c-5d7c6d0add14', 'HTTPStatusCode': 200, 'HTTPHeaders': {'date': 'Fri, 21 Jan 2022 14:33:52 GMT', 'content-type': 'application/x-amz-json-1.1', 'content-length': '2', 'connection': 'keep-alive', 'x-amzn-requestid': '998cfb37-087d-4c84-bd8c-5d7c6d0add14'}, 'RetryAttempts': 0}}
 ```
 
-3. run [login.py](login.py) to retrieve the JWT token from Cognito
+3. run [login.py](login.py) to retrieve the JWT token from Cognito. This can and should be configured as an endpoint in Api Gateway.
 ```python
 python ./login.py 
 eyJraWQiO...
 ```
-4. execute 
+4. call the Api Gateway endpoint that requires authentication 
 ```bash
 curl -X GET 'https://rkwq3kbkx4.execute-api.eu-west-1.amazonaws.com/test' -H 'Authorization: eyJraWQiO...'
 {"response": {"resultStatus": "SUCCESS", "results": {"email": "lucian@example.com"}}}
