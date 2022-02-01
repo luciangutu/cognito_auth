@@ -2,7 +2,8 @@ title Auth Sequence diagram for an existing Cognito user
 
 Api Gateway /login<--Client: (1) Client sends username and password
 Api Gateway /login-->Cognito: (2) Request the IdToken
-Cognito-->Api Gateway /login: (3) Response with the IdToken
+Cognito-->Client: (3) Response with the IdToken
+
 note over Client,Cognito:Retrieving the **JWT token** from Cognito by providing user and password
 
 Client-->Api Gateway /auth: (4) Client sends a request to an endpoint using the **JWT token** in the headers
